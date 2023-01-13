@@ -9,19 +9,29 @@ export default function Hamburger(){
       <span class="Mask"><span>Home</span></span>
     </li>
     <li class="Menu-list-item" data-offset="16" onclick>
-      About
-      <span class="Mask"><span>About</span></span>
-      <span class="Mask"><span>About</span></span>
+      Games
+      <span class="Mask"><span>Games</span></span>
+      <span class="Mask"><span>Games</span></span>
     </li>
     <li class="Menu-list-item" data-offset="12" onclick>
-      Work
-      <span class="Mask"><span>Work</span></span>
-      <span class="Mask"><span>Work</span></span>
+      Team
+      <span class="Mask"><span>Team</span></span>
+      <span class="Mask"><span>Team</span></span>
+    </li>
+    <li class="Menu-list-item" data-offset="8" onclick>
+      Careers
+      <span class="Mask"><span>Careers</span></span>
+      <span class="Mask"><span>Careers</span></span>
     </li>
     <li class="Menu-list-item" data-offset="8" onclick>
       Contact
       <span class="Mask"><span>Contact</span></span>
       <span class="Mask"><span>Contact</span></span>
+    </li>
+    <li class="Menu-list-item" data-offset="8" onclick>
+      Login/Register
+      <span class="Mask"><span>Login/Register</span></span>
+      <span class="Mask"><span>Login/Register</span></span>
     </li>
   </ul>
 </div>
