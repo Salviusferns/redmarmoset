@@ -2,13 +2,16 @@
 import './App.css';
 import Profile from './components/Profile';
 import Login from './components/Login';
-import Hamburger from './Hamburger';
+import Feed from './components/Feed';
 function App() {
   return (
     <div className="App">
       
-      <Login/>
+      
+      
       <Profile/>
+      <Login/>
+      
       <div id="page-wrap">Redmarmoset</div>
     </div>
   );
