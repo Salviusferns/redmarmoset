@@ -1,16 +1,18 @@
 import './styles.css';
+import React, { useState } from "react";
 export default function Hamburger(){
+    const [isOpen, setIsOpen] = useState(false);
   
     return(
     <div>
-      <nav role="navigation">
-          <div id="menuToggle">
-            <input type="checkbox" />
+            <div className={`hamburger-menu ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
 
-              <span></span>
-              <span></span>
-              <span></span>
-          
+
+      <nav className={`nav-menu ${isOpen ? "open" : ""}`}>
             <ul class="Menu-list" data-offset="10">
               <li class="Menu-list-item" data-offset="20" onclick>
                 Home
@@ -45,9 +47,8 @@ export default function Hamburger(){
               </li>
               
             </ul>
+            </nav>
             </div>
-           </nav>
-          </div>
 
               )
           }
