@@ -1,17 +1,61 @@
+import React, { useState, useEffect } from 'react';
+
 import './Login.css'
+import { GoogleLogin , GoogleLogout } from 'react-google-login';
+import { gapi } from 'gapi-script';
+import Hamburger from '../Hamburger';
 export default function Login(){
+    const [ profile, setProfile ] = useState([]);
+    const clientId = '294381744071-jehb8dq6p517k231f0rnp18cjuo21fp3.apps.googleusercontent.com';
+
+    useEffect(() => {
+    const initClient = () => {
+            gapi.client.init({
+            clientId: clientId,
+            scope: ''
+        });
+        };
+    gapi.load('client:auth2', initClient);
+});
+    const onSuccess = (res) => {
+        console.log('success:', res);
+        setProfile(res.profileObj);
+
+    };
+    const onFailure = (err) => {
+        console.log('failed', err);
+    };
+
+    const logOut = () => {
+        setProfile(null);
+    };
+    
     return(
-        <div class="desktop-1-EaH" id="1:2">
-            <div class="rectangle-1-etu" id="1:3"></div>
-            <div class="rectangle-4-8Bo" id="4:17"></div>
-            <div class="rectangle-5-DU9" id="4:18"></div>
-            <p class="username-XDw" id="4:19">username</p>
-            <p class="password-oSM" id="4:20">Password</p>
-            <p class="user-login-ukH" id="4:21">User Login</p>
-            <p class="forget-password-ceh" id="8:3">FORGET PASSWORD?</p>
-            <p class="create-account-J1j" id="8:15">CREATE ACCOUNT</p>
-            <div class="line-1-D8h" id="103:49"></div>
-            <div class="line-2-KxR" id="103:50"></div>
-        </div>
-    )
+        <div>
+        <h2>Redmarmoset</h2>
+        <br />
+        <br />
+        {profile ? (
+            <div>
+                <img src={profile.imageUrl} alt="user image" />
+                <h3>User Logged in</h3>
+                <p>Name: {profile.name}</p>
+                <p>Email Address: {profile.email}</p>
+                <br />
+                <br />
+                <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
+            </div>
+        ) : (
+            <GoogleLogin
+                clientId={clientId}
+                buttonText="Sign in with Google"
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={'single_host_origin'}
+                isSignedIn={true}
+            />
+        )}
+    </div>
+);
 }
+    

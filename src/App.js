@@ -5,7 +5,8 @@ import Hamburger from './Hamburger';
 function App() {
   return (
     <div className="App">
-      <Hamburger/>
+ 
+      <Login/>
       <div id="page-wrap">Redmarmoset</div>
     </div>
   );
