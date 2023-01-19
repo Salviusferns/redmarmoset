@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './Login.css'
 import { GoogleLogin , GoogleLogout } from 'react-google-login';
 import { gapi } from 'gapi-script';
-import Hamburger from '../Hamburger';
+import Hamburger from './Hamburger';
 export default function Login(){
     const [ profile, setProfile ] = useState([]);
     const clientId = '294381744071-jehb8dq6p517k231f0rnp18cjuo21fp3.apps.googleusercontent.com';
@@ -32,6 +32,7 @@ export default function Login(){
     
     return(
         <div>
+            <Hamburger/>
         <h2>Redmarmoset</h2>
         <br />
         <br />

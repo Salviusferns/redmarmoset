@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+body {
+  font-family: "Bangers";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-kerning: normal;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  border: 3px solid #FF0000;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+a:link,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: all 0.3s;
+}
+
+body {
+  background: linear-gradient(45deg, #000000, #000000);
+  transform-style: preserve-3d;
+  transform: perspective(60rem);
+  position: fixed;
+  display: flex;
+  align-items:flex-start;
+  justify-content: flex-start;
+  color: #ffffff;
+}
+
+.Menu-list {
+  font-size: 2.7rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateX(-10deg) rotateY(20deg);
+}
+
+.Menu-list-item {
+  position: relative;
+  color: transparent;
+  cursor: pointer;
+}
+.Menu-list-item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 49%;
+  left: -10%;
+  right: -10%;
+  height: 4px;
+  border-radius: 4px;
+  margin-top: -2px;
+  background: #ff0000;
+  transform: scale(0);
+  transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+  z-index: 1;
+}
+
+
+
+.Mask {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  color: #ffffff;
+  top: 0;
+  height: 49%;
+  transition: all 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+}
+.Mask span {
+  display: block;
+}
+
+.Mask + .Mask {
+  top: 48.9%;
+  height: 51.1%;
+}
+.Mask + .Mask span {
+  transform: translateY(-49%);
+}
+
+.Menu-list-item:hover .Mask,
+.Menu-list-item:active .Mask {
+  color: #fff;
+  transform: skewX(12deg) translateX(5px);
+}
+.Menu-list-item:hover .Mask + .Mask,
+.Menu-list-item:active .Mask + .Mask {
+  transform: skewX(12deg) translateX(-5px);
+}
+a{
+  color: white;
+}
+.Menu-list-item:hover::before,
+.Menu-list-item:active::before {
+  transform: scale(1);
+}/*# sourceMappingURL=styles.css.map */
+
+.hamburger-menu {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(255, 0, 0);
+  margin: 8px 0;
+  transition: all 0.4s ease;
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-menu {
+  position: relative;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.nav-menu.open {
+  height: auto;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: all 0.2s ease;
+}
+
