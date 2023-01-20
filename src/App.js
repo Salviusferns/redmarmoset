@@ -5,14 +5,14 @@ import Login from './components/Login';
 import Feed from './components/Feed';
 function App() {
   return (
-    <div className="App">
-      
-      
-      
-      <Profile/>
-      <Login/>
-      
-      <div id="page-wrap">Redmarmoset</div>
+    <div>
+      <div className="App">
+        <Profile/>
+        <Login/>
+      </div>
+      <div className='App-2'>
+        <Feed/>
+      </div>
     </div>
   );
 }

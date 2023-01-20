@@ -5,6 +5,7 @@ export default function Feed(){
     return(
         <div>
             <Hamburger/>
+            <div>Feed</div>
             <img class="n-1-t4D" src={Gun} id="1:4"/>
         </div>
     )

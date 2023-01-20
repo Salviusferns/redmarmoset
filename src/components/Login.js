@@ -32,7 +32,7 @@ export default function Login(){
     
     return(
         <div>
-            <Hamburger/>
+            
         <h2>Redmarmoset</h2>
         <br />
         <br />
