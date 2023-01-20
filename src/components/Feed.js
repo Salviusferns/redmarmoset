@@ -1,9 +1,10 @@
+import ReactPlayer from 'react-player'
 import './Feed.css'
 import React, { useState } from "react";
 import Hamburger from './Hamburger'
 import Gun from './images/Feed.png'
 export default function Feed(){
-    const [query, setQuery] = useState('Gaming Videos');
+    const [query, setQuery] = useState('Apex legend');
     const [list, setList] = useState(null);
     const search = (e) => {
       e.preventDefault();
@@ -40,7 +41,9 @@ export default function Feed(){
               {list.map(item => (
                 <li className="item" key={item.id}>
                   <div>
-                    <b><a href={item.link}>{item.title}</a></b>
+                    <b>{item.title}</b>
+                    <ReactPlayer url={item.url}/>
+
                     <p>{item.description}</p>
                   </div>
                   <ul className="meta">
