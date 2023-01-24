@@ -3,7 +3,7 @@
     height: 102.4rem;
     overflow: hidden;
     position: relative;
-    width: 100%;
+    width: 100vw;
 }
   
     .rectangle-1-e3P {
@@ -49,6 +49,12 @@
       top: 43.2rem;
       white-space: nowrap;
       width: 7rem;
+    }
+    .blur{
+      background-color: #00000069;
+      width: 80vw;
+      padd
+      padding-right: 20px;
     }
     .password-nDT {
       color: #000000;

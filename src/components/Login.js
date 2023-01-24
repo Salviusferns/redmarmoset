@@ -37,7 +37,7 @@ export default function Login(){
         <br />
         <br />
         {profile ? (
-            <div>
+            <div className='blur'>
                 <img src={profile.imageUrl} alt="user image" />
                 <h3>User Logged in</h3>
                 <p>Name: {profile.name}</p>
