@@ -26,8 +26,10 @@ export default function Feed(){
       }
     return(
         <div>
-            <Hamburger/>
-            <div>Feed</div>
+          <div>
+            <hi> FEED</hi>
+          </div>
+
           
             <form onSubmit={search}>
         <input autoFocus value={query} onChange={e => setQuery(e.target.value)} />
@@ -42,7 +44,7 @@ export default function Feed(){
                 <li className="item" key={item.id}>
                   <div>
                     <b>{item.title}</b>
-                    <ReactPlayer url={item.url} style={{ width: '100%' }}/>
+                    <ReactPlayer url={item.url} style={{ width: '100%' }} />
 
                     <p>{item.description}</p>
                   </div>
