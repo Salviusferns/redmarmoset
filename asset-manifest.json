@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/redmarmoset/static/css/main.9f2673dd.css",
+    "main.js": "/redmarmoset/static/js/main.861d9a4c.js",
+    "static/js/787.90f60c51.chunk.js": "/redmarmoset/static/js/787.90f60c51.chunk.js",
+    "static/media/profile.png": "/redmarmoset/static/media/profile.130d4536017aeb0072e6.png",
+    "static/media/Feed.png": "/redmarmoset/static/media/Feed.3a255c33dd59a4a4bdd4.png",
+    "index.html": "/redmarmoset/index.html",
+    "main.9f2673dd.css.map": "/redmarmoset/static/css/main.9f2673dd.css.map",
+    "main.861d9a4c.js.map": "/redmarmoset/static/js/main.861d9a4c.js.map",
+    "787.90f60c51.chunk.js.map": "/redmarmoset/static/js/787.90f60c51.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9f2673dd.css",
+    "static/js/main.861d9a4c.js"
+  ]
+}
