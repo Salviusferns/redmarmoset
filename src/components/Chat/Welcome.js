@@ -1,7 +1,7 @@
-import { auth } from "../firebase";
+import { auth } from "./firebase/firebase";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import React from "react";
-import GoogleSignin from "./img/k.png";
+import GoogleSignin from "./img/OIP.png";
 
 const Welcome = () => {
   const googleSignIn = () => {
@@ -11,9 +11,9 @@ const Welcome = () => {
 
   return (
     <main className="welcome">
-      <h2>Welcome to React Chat.</h2>
+      <h2>Welcome to Red marmoset global Chat.</h2>
       
-      <p>Sign in with Google to chat with with your fellow React Developers.</p>
+      <p>Sign in with Google to chat with with your follower.</p>
       <button className="sign-in">
         <img
           onClick={googleSignIn}
