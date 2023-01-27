@@ -15,6 +15,7 @@ function App() {
       <div className="App">
         <Profile/>
         <Login/>
+        <NavBar/>
         <div></div>
       </div>
       <div className='App-2'>

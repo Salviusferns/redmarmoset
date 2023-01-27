@@ -106,7 +106,7 @@ input {
 /* send message */
 .send-message {
   position: relative;
-  bottom: -50px;
+  bottom: 600px;
   width: 60%;
   padding: 20px 30px;
   background-color: #ff0000;
