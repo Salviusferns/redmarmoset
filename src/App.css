@@ -105,9 +105,9 @@ input {
 
 /* send message */
 .send-message {
-  position: fixed;
-  bottom: -1000px;
-  width: 100%;
+  position: relative;
+  bottom: -50px;
+  width: 60%;
   padding: 20px 30px;
   background-color: #ff0000;
   display: flex;
@@ -117,7 +117,7 @@ input {
   padding: 10px 10px;
   border-radius: 5px 0 0 5px;
   border: none;
-  flex-grow: 1;
+  flex-grow: 2;
   background-color: white;
   color: #000000;
   font-size: 1rem;
