@@ -15,7 +15,7 @@ function App() {
       <div className="App">
         <Profile/>
         <Login/>
-        
+        <div></div>
       </div>
       <div className='App-2'>
         <NavBar/>
