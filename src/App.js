@@ -6,6 +6,7 @@ import ChatBox from './components/Chat/ChatBox';
 import Welcome from './components/Chat/Welcome';
 import Profile from './components/Profile';
 import Login from './components/Login';
+import Appp from "./components/post/Appp";
 import Feed from './components/Feed';
 import { useState } from 'react';
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <ChatBox />
         </>
       )}
+      <Appp/>
       <Feed/>
       </div>
     </div>
