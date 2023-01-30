@@ -188,8 +188,10 @@ function App() {
         </div>
       </div>
       <div className="timeline">
+      {user && <ImageUpload user={user} />}
       {
   posts.map(({ id, post }) => (
+    
     <Post
       key={id}
       postId={id}
