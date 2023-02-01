@@ -1,11 +1,38 @@
 import React, { useState, useEffect } from "react";
 import "./Post.css";
 import Avatar from "@material-ui/core/Avatar";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { db, fb } from "../../firebase/FirebaseInit";
 
 function Post({ postId, user, username, caption, imageUrl }) {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
+  const [likes, setLikes] = useState(0);
+useEffect(() => {
+  let unsubscribe;
+  if (postId) {
+    unsubscribe = db
+      .collection("posts")
+      .doc(postId)
+      .collection("likes")
+      .onSnapshot((snapshot) => {
+        setLikes(snapshot.docs.length);
+      });
+  }
+  return () => {
+    unsubscribe();
+  };
+}, [postId]);
+  const postLike = (e) => {
+    if (user) {
+    db.collection("posts").doc(postId).collection("likes").add({
+      likes: likes,
+      username: user.displayName,
+      timestamp: fb.firestore.FieldValue.serverTimestamp(),
+    });
+    setLikes(0);
+  };
+}
   useEffect(() => {
     let unsubscribe;
     if (postId) {
@@ -45,6 +72,11 @@ function Post({ postId, user, username, caption, imageUrl }) {
       <h4 className="post__text">
         <strong>{username}</strong> {caption}
       </h4>
+      <div className="post__likes">
+  <button onClick={postLike}>
+    <FavoriteBorderIcon /> {likes}
+  </button>
+</div>
       {
         <div className={comments.length > 0 ? "post__comments" : ""}>
           {comments.map((comment) => (
