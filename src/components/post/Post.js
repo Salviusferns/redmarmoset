@@ -58,6 +58,10 @@ useEffect(() => {
     });
     setComment("");
   };
+  const deletePost = (e) => {
+    e.preventDefault();
+    db.collection("posts").doc(postId).delete();
+  };
   return (
     <div className="post">
       <div className="post__header">
@@ -67,6 +71,9 @@ useEffect(() => {
           src="/static/images/avatar/1.jpg"
         />
         <h3>{username}</h3>
+        <button className="delete__button" onClick={deletePost}>
+              Delete Post
+            </button>
       </div>
       <img className="post__image" src={imageUrl} alt="" />
       <h4 className="post__text">
@@ -76,7 +83,9 @@ useEffect(() => {
   <button onClick={postLike}>
     <FavoriteBorderIcon /> {likes}
   </button>
+  
 </div>
+
       {
         <div className={comments.length > 0 ? "post__comments" : ""}>
           {comments.map((comment) => (
@@ -104,6 +113,7 @@ useEffect(() => {
             >
               Post
             </button>
+
           </div>
         </form>
       )}
