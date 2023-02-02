@@ -8,6 +8,7 @@ import Profile from './components/Profile';
 import Login from './components/Login';
 import Appp from "./components/post/Appp";
 import Feed from './components/Feed';
+import Police from "./components/images/pol.png"
 import { useState } from 'react';
 function App() {
   const [user] = useAuthState(auth);
@@ -19,15 +20,19 @@ function App() {
         <NavBar/>
         <div></div>
       </div>
+      <div className="app-3">
+      {!user ? (
+          
+          <Welcome />
+          
+        ) : (
+          <>
+            <ChatBox />
+          </>
+        )}
+
+      </div>
       <div className='App-2'>
-        <NavBar/>
-        {!user ? (
-        <Welcome />
-      ) : (
-        <>
-          <ChatBox />
-        </>
-      )}
       <Appp/>
       <Feed/>
       </div>

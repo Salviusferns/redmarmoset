@@ -111,15 +111,9 @@ function App() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="primary__button" type="submit" onClick={signUp}>
-              Sign up
-            </button>
           </form>
           <center className="authFooter">
-            <small>
-              &copy; 2021 Instagram Tribute by{" "}
-              <a href="mailto:bkrofegha@gmail.com"> Blessing Krofegha</a>
-            </small>
+            
           </center>
         </div>
       </Modal>
@@ -141,9 +135,6 @@ function App() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="primary__button" type="submit" onClick={login}>
-              Log in
-            </button>
           </form>
           <center className="authFooter">
             <small>
@@ -161,18 +152,8 @@ function App() {
             </button>
           ) : (
             <div className="app__headerButtons">
-              <button
-                className="primary__button"
-                onClick={() => setOpenLogin(true) || setOpenSignup(false)}
-              >
-                Log in
-              </button>
-              <button
-                className="text__button"
-                onClick={() => setOpenSignup(true) || setOpenLogin(false)}
-              >
-                Sign up
-              </button>
+  
+
             </div>
           )}
         </div>
