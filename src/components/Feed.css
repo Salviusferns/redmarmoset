@@ -69,8 +69,8 @@
       .items {
         display:grid;
         grid-template-areas: 
-        "d i k"
-        "m m g";
+        "d i"
+        "m m";
         gap: 3em;
       }
       .item {

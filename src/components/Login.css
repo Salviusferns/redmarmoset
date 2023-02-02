@@ -52,8 +52,9 @@
     }
     .blur{
       background-color: #00000069;
-      width: 80vh;
+      width: 250px;
       padding-right: 100px;
+      right: 2000px;
     }
     .password-nDT {
       color: #000000;
