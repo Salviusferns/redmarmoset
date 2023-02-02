@@ -16,28 +16,28 @@ export default function Hamburger(){
             <ul class="Menu-list" data-offset="10">
               <li class="Menu-list-item" data-offset="20" onclick>
                 Home
-                <span class="Mask"><span ><a href="#Home" class="center">Home</a></span></span>
-                <span class="Mask"><span ><a href="#Home" class="center">Home</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/" class="center">Home</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/" class="center">Home</a></span></span>
               </li>
               <li class="Menu-list-item" data-offset="16" onclick>
                 Games
-                <span class="Mask"><span ><a href="#Games" class="center">Games</a></span></span>
-                <span class="Mask"><span ><a href="#Games" class="center">Games</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/games" class="center">Games</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/games" class="center">Games</a></span></span>
               </li>
               <li class="Menu-list-item" data-offset="12" onclick>
                 Team
-                <span class="Mask"><span ><a href="#Team" class="center">Team</a></span></span>
-                <span class="Mask"><span ><a href="#Team" class="center">Team</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/team" class="center">Team</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/team" class="center">Team</a></span></span>
               </li>
               <li class="Menu-list-item" data-offset="8" onclick>
                 Careers
-                <span class="Mask"><span ><a href="#Careers" class="center">Careers</a></span></span>
-                <span class="Mask"><span ><a href="#Careers" class="center">Careers</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/careers" class="center">Careers</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/careers" class="center">Careers</a></span></span>
               </li>
               <li class="Menu-list-item" data-offset="8" onclick>
                 Contact
-                <span class="Mask"><span ><a href="#Contact" class="center">Contact</a></span></span>
-                <span class="Mask"><span ><a href="#Contact" class="center">Contact</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/contact" class="center">Contact</a></span></span>
+                <span class="Mask"><span ><a href="https://www.redmarmosetstudios.com/contact" class="center">Contact</a></span></span>
               </li>
               
             </ul>
