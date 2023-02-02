@@ -146,16 +146,6 @@ function App() {
       <div className="app__header">
         <div className="app__headerWrapper">
 
-          {user ? (
-            <button className="text__button" onClick={() => auth.signOut()}>
-              Logout
-            </button>
-          ) : (
-            <div className="app__headerButtons">
-  
-
-            </div>
-          )}
         </div>
       </div>
       <div className="timeline">
