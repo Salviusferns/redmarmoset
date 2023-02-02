@@ -39,12 +39,6 @@ export default function Hamburger(){
                 <span class="Mask"><span ><a href="#Contact" class="center">Contact</a></span></span>
                 <span class="Mask"><span ><a href="#Contact" class="center">Contact</a></span></span>
               </li>
-              <li class="Menu-list-item" data-offset="8" onclick>
-                Login/Register
-                <span class="Mask"><span ><a href="#Login/Register" class="center">Login/Register</a></span></span>
-                <span class="Mask"><span><a href="#Login/Register" class="center">Login/Register</a></span></span>
-                
-              </li>
               
             </ul>
             </nav>

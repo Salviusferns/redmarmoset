@@ -111,7 +111,7 @@ a{
 
 .hamburger-menu {
   width: 40px;
-  margin-left: 560px;
+  margin-left: 200px;
   height: 40px;
   position: relative;
   cursor: pointer;
@@ -139,16 +139,18 @@ a{
 
 .nav-menu {
   position: relative;
-  top: 60px;
-  right: 0;
+  top: -10px;
+  left: 400px;
   width: 200px;
-  height: 0;
+  height: 0px;
   overflow: hidden;
   transition: all 0.4s ease;
+  transform: translateX(-100%);
 }
 
 .nav-menu.open {
   height: auto;
+  transform: translateX(0%);
 }
 
 .nav-menu a {
