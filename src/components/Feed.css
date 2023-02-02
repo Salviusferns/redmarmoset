@@ -37,9 +37,8 @@
         color: #000000;
       }
       form {
-        display: grid;
         grid-template-columns: 1fr auto;
-        gap: 1em;
+        gap: 10px;
         margin-bottom: 1em;
         color: #000000;
       }
