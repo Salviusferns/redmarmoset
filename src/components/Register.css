@@ -1,0 +1,6 @@
+.app__signUp {
+    display: flex;
+    flex-direction: column;
+    margin: 28px 0;
+    row-gap: 15px;
+  }

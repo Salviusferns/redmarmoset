@@ -44,7 +44,7 @@ export default function Feed(){
                 <li className="item" key={item.id}>
                   <div>
                     <b>{item.title}</b>
-                    <ReactPlayer width="500px" height="300px" border-radius= "15px" url={item.url} />
+                    <ReactPlayer width="500px" height="300px" border-radius= "15px" url={item.url} key={item.id} playing  />
 
                     <p>{item.description}</p>
                   </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Register from './Register';
 import './Login.css'
 import { GoogleLogin , GoogleLogout } from 'react-google-login';
 import { gapi } from 'gapi-script';
@@ -36,27 +36,7 @@ export default function Login(){
         <h2>Redmarmoset</h2>
         <br />
         <br />
-        {profile ? (
-            <div className='blur'>
-                <img src={profile.imageUrl} alt="user image" />
-                <h3>User Logged in</h3>
-                <p>Name: {profile.name}</p>
-                <p>Email Address: {profile.email}</p>
-                <br />
-                <br />
-                <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
-            </div>
-        ) : (
-            <GoogleLogin
-                clientId={clientId}
-                buttonText="Sign in with Google"
-                onSuccess={onSuccess}
-                onFailure={onFailure}
-                cookiePolicy={'single_host_origin'}
-                isSignedIn={true}
-            />
-        )}
-    </div>
+        <Register/>
+        </div>
 );
 }
-    
