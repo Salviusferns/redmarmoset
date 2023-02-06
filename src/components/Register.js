@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import { db, auth, fb } from './post/firebase/FirebaseInit';
+import ProfileMain from './ProfileMain';
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
+  const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 
   const handleSubmit = async e => {
     e.preventDefault();
 
     try {
-      const response = await auth.createUserWithEmailAndPassword(email, password);
+      const response = await auth.createUserWithEmailAndPassword(email, password,username);
       await db.collection('users').doc(response.user.uid).set({
         email: email,
         createdAt: fb.firestore.Timestamp.fromDate(new Date()),
         password:password,
-        password:username,
+        username:username,
         
       });
+      setUser(response.user);
     } catch (error) {
       setError(error);
     }
@@ -26,6 +29,9 @@ const Register = () => {
 
   return (
     <div className='app__signUp'>
+            {user ? (
+        <ProfileMain />
+      ) : (
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -47,6 +53,7 @@ const Register = () => {
         />
         <button type="submit">Register</button>
       </form>
+      )}
       {error && <div>{error.message}</div>}
     </div>
   );

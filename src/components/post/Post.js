@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./Post.css";
 import Avatar from "@material-ui/core/Avatar";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import PersonAddDisabledOutlinedIcon from '@mui/icons-material/PersonAddDisabledOutlined';
 import { db, fb } from "../../firebase/FirebaseInit";
 
 function Post({ postId, user, username, caption, imageUrl }) {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
   const [likes, setLikes] = useState(0);
+  const [followed, setFollowed] = useState(false);
+
 useEffect(() => {
   let unsubscribe;
   if (postId) {
@@ -23,6 +26,7 @@ useEffect(() => {
     unsubscribe();
   };
 }, [postId]);
+
   const postLike = (e) => {
     if (user) {
     db.collection("posts").doc(postId).collection("likes").add({
@@ -33,6 +37,16 @@ useEffect(() => {
     setLikes(0);
   };
 }
+  const followUser = (e) => {
+    if (user) {
+      db.collection("users").doc(username).collection("followers").add({
+        follower: user.displayName,
+        timestamp: fb.firestore.FieldValue.serverTimestamp(),
+      });
+      setFollowed(true);
+    }
+  };
+
   useEffect(() => {
     let unsubscribe;
     if (postId) {
@@ -71,6 +85,13 @@ useEffect(() => {
           src="/static/images/avatar/1.jpg"
         />
         <h3>{username}</h3>
+        <div className="post__action">
+      {followed ? (
+        <p>Followed</p>
+      ) : (
+        <PersonAddDisabledOutlinedIcon onClick={followUser} />
+      )}
+    </div>
         <button className="delete__button" onClick={deletePost}>
               Delete Post
             </button>
@@ -83,7 +104,7 @@ useEffect(() => {
   <button onClick={postLike}>
     <FavoriteBorderIcon /> {likes}
   </button>
-  
+
 </div>
 
       {
