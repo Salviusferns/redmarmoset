@@ -8,11 +8,16 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+  const [isLogin, setIsLogin] = useState(false);
 
   const handleSubmit = async e => {
     e.preventDefault();
 
     try {
+      if (isLogin) {
+        const response = await auth.signInWithEmailAndPassword(email, password);
+        setUser(response.user);
+      } else {
       const response = await auth.createUserWithEmailAndPassword(email, password,username);
       await db.collection('users').doc(response.user.uid).set({
         email: email,
@@ -22,6 +27,7 @@ const Register = () => {
         
       });
       setUser(response.user);
+    }
     } catch (error) {
       setError(error);
     }
@@ -39,22 +45,39 @@ const Register = () => {
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
+        {!isLogin && (
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={e => setUsername(e.target.value)}
         />
+        )}
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
-        <button type="submit">Register</button>
+        <button type="submit">{isLogin ? 'Login' : 'Register'}</button>
       </form>
       )}
       {error && <div>{error.message}</div>}
+      {!user && (
+        <div>
+          {isLogin ? (
+            <p>
+              Don't have an account?{' '}
+              <button onClick={() => setIsLogin(false)}>Sign up</button>
+            </p>
+          ) : (
+            <p>
+              Already have an account?{' '}
+              <button onClick={() => setIsLogin(true)}>Login</button>
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 };
